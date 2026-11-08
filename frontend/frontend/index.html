@@ -1,0 +1,169 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMind AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <h2>DocuMind AI</h2>
+        </div>
+
+        <button class="new-chat-btn" onclick="newChat()">
+            + New Conversation
+        </button>
+
+        <div class="sidebar-section">
+            <p class="section-title">WORKSPACE</p>
+
+            <div class="sidebar-item active">
+                💬 Document Assistant
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="section-title">CONVERSATION HISTORY</p>
+            <div id="conversationHistory"></div>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="section-title">MY DOCUMENTS</p>
+            <div id="documentHistory"></div>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div class="avatar">J</div>
+                <div>
+                    <h4>Jayapradha</h4>
+                    <p>AI Workspace</p>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h2>Document Assistant</h2>
+                <p>Ask questions and explore your documents with AI.</p>
+            </div>
+
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Gemini AI Assistant
+            </div>
+        </header>
+
+        <!-- CHAT AREA -->
+        <section class="chat-area" id="chatArea">
+
+            <!-- WELCOME SCREEN -->
+            <div class="welcome-screen" id="welcomeScreen">
+
+                <div class="welcome-icon">✦</div>
+
+                <h1>
+                    Your documents.<br>
+                    <span>Smarter conversations.</span>
+                </h1>
+
+                <p>
+                    Upload a PDF document and ask anything.
+                    Gemini AI will find answers from your document.
+                </p>
+
+                <!-- PDF UPLOAD -->
+                <div class="upload-box" id="uploadBox">
+
+                    <div class="upload-icon">📄</div>
+
+                    <h3>Upload your document</h3>
+
+                    <p>Drag & drop your PDF here or browse files</p>
+
+                    <input type="file" id="pdfInput" accept=".pdf" hidden>
+
+                    <button onclick="document.getElementById('pdfInput').click()">
+                        Browse PDF
+                    </button>
+
+                    <small>PDF files · Maximum 10 MB</small>
+
+                </div>
+
+                <!-- SUGGESTIONS -->
+                <div class="suggestions">
+
+                    <button onclick="useSuggestion('Summarize my document')">
+                        📝 Summarize document
+                    </button>
+
+                    <button onclick="useSuggestion('What are the key points?')">
+                        🔍 Key points
+                    </button>
+
+                    <button onclick="useSuggestion('Explain this document simply')">
+                        💡 Explain simply
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DOCUMENT STATUS -->
+        <div class="document-status" id="documentStatus">
+            📄 No document uploaded
+        </div>
+
+        <!-- CHAT INPUT -->
+        <footer class="chat-footer">
+
+            <div class="chat-input-container">
+
+                <input
+                    type="text"
+                    id="questionInput"
+                    placeholder="Upload a document to start asking questions..."
+                    disabled
+                >
+
+                <button id="sendButton" onclick="sendQuestion()" disabled>
+                    ➤
+                </button>
+
+            </div>
+
+            <p class="footer-note">
+                AI responses are generated using your uploaded document.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
